@@ -1,0 +1,13 @@
+[package]
+name = "gl-utils"
+version = "0.1.0"
+authors = ["Jason Dagit <dagitj@gmail.com>"]
+
+[profile.dev]
+opt-level = 2
+debug     = true
+
+[dependencies]
+gl           = "*"
+field-offset = "*"
+image        = "*"
