@@ -25,10 +25,9 @@ fn impl_VertexAttribFields(ast: &syn::MacroInput) -> quote::Tokens
     match &ast.body {
         &Enum(..)        => panic!("enums are not supported."),
         &Struct(ref var) => {
-            let fields = var.fields();
+            let fields      = var.fields();
             let field_ident = &fields.iter()
-                .filter(|f| f.ident.is_some() )
-                .map(|f| f.clone().ident.unwrap())
+                .filter_map(|f| f.clone().ident )
                 .collect::<Vec<syn::Ident>>();
 
             quote! {
