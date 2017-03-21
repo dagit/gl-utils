@@ -4,3 +4,8 @@ version = "0.1.0"
 authors = ["Jason Dagit <dagitj@gmail.com>"]
 
 [dependencies]
+syn        = "*"
+quote      = "*"
+
+[lib]
+proc-macro = true
